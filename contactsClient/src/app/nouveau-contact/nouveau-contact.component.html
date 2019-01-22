@@ -1,0 +1,34 @@
+<div class="container spacer">
+    <div class="panel panel-primary" *ngIf="mode==1">
+        <div class="panel-heading">Saisie d'un contact</div>
+        <div class="panel-body">
+            <!--f.value: On envoie toutes les données saisies dans le formulaire
+            l'attribut #f est une reference au formulaire-->
+            <form #f="ngForm" (ngSubmit)="onSaveContact(f.value)">
+                <div class="form-group">
+                    <label class="control-label">Nom</label>
+                    <input class="form-control" type="text" name="nom" ngModel="" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Prénom</label>
+                    <input class="form-control" type="text" name="prenom" ngModel="" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input class="form-control" type="email" name="email" ngModel="" required email>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Date de Naissance</label>
+                    <input class="form-control" type="date" name="dateNaissance" ngModel="" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Téléphone</label>
+                    <input class="form-control" type="text" name="tel" ngModel="" required>
+                </div>
+                <!-- [disabled]="f.invalid" : Le bouton sera actif que si les données sont bien saisie,
+                le formulaire est valide-->
+                <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

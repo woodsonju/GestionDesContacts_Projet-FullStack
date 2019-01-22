@@ -1,0 +1,12 @@
+.spacer {
+    margin-top: 25px;
+    
+}
+
+.spacerLeft {
+    margin-left: 10px;
+}
+
+.clickable {
+    cursor: pointer;
+}
